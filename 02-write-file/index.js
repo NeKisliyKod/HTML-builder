@@ -17,17 +17,17 @@ function writeStream(content) {
 }
 writeStream('');
 
-function t() {
+function reciveThemessage() {
   rl.question('Enter your text please:\n ', (answer) => {
     if (!answer.includes('exit')) {
       writeStream(answer);
-      t();
+      reciveThemessage();
     } else {
       rl.close();
     }
   });
 }
-t();
+reciveThemessage();
 
 process.on('exit', () => {
   console.log('We finished, good luck');
