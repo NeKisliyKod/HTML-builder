@@ -18,12 +18,11 @@ function writeStream(content) {
 writeStream('');
 
 function t() {
-  rl.question('Enter your text please: ', (answer) => {
+  rl.question('Enter your text please:\n ', (answer) => {
     if (!answer.includes('exit')) {
       writeStream(answer);
       t();
     } else {
-      console.log('END');
       rl.close();
     }
   });
@@ -31,5 +30,5 @@ function t() {
 t();
 
 process.on('exit', () => {
-  console.log('Messages.txt finished');
+  console.log('We finished, good luck');
 });
